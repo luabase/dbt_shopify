@@ -49,7 +49,7 @@ with order_lines as (
         coalesce(refunds_aggregated.quantity,0) as refunded_quantity,
         coalesce(refunds_aggregated.subtotal,0) as refunded_subtotal,
         order_lines.quantity - coalesce(refunds_aggregated.quantity,0) as quantity_net_refunds,
-        order_lines.pre_tax_price  - coalesce(refunds_aggregated.subtotal,0) as subtotal_net_refunds,
+        order_lines.price  - coalesce(refunds_aggregated.subtotal,0) as subtotal_net_refunds,
         
         product_variants.created_timestamp as variant_created_at,
         product_variants.updated_timestamp as variant_updated_at,
