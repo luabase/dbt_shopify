@@ -236,8 +236,6 @@ models:
           The order_adjusted_total will equate to the total sales - refunds listed within the transactions table for the order (after currency exchange).
       - name: checkout_token
         description: The checkout token applied to the order.
-      - name: total_shipping_price_set
-        description: The total shipping price set to the order.
       - name: order_total_shipping_tax
         description: Total shipping tax attributed to the order.
       - name: order_tags
@@ -268,16 +266,8 @@ models:
         description: "{{ doc('_fivetran_deleted') }}"
       - name: tracking_numbers
         description: List of tracking numbers for the order.
-      - name: total_discounts_set
-        description: The total discounts applied to the price of the order in shop and presentment currencies.
-      - name: total_line_items_price_set
-        description: The total of all line item prices in shop and presentment currencies.
-      - name: total_price_set
-        description: The total price of the order in shop and presentment currencies.
       - name: total_price_usd
         description: The sum of all line item prices, discounts, shipping, taxes, and tips in USD. Must be positive.
-      - name: total_tax_set
-        description: The total tax applied to the order in shop and presentment currencies.
       - name: is_confirmed
         description: Whether the order is confirmed.
       - name: shipping_discount_amount
@@ -659,12 +649,6 @@ models:
         description: The total pre tax price of the order.
       - name: tax_code
         description: This parameter applies only to the stores that have the Avalara AvaTax app installed. Specifies the Avalara tax code for the product variant.
-      - name: pre_tax_price_set
-        description: The pre tax price of the line item in shop currency and presentment currency.
-      - name: price_set
-        description: The price of the line item in shop and presentment currencies.
-      - name: total_discount_set
-        description: The total amount allocated to the line item in the presentment currency.
       - name: properties
         description: Line item properties.
       - name: destination_location_address_1
